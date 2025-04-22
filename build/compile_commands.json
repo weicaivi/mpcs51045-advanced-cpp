@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/weicaivi/mpcs51045-advanced-cpp/build",
+  "command": "/usr/bin/clang++-17   -I/home/weicaivi/mpcs51045-advanced-cpp/hw12/12.4/../../fmt/include  -g   -std=gnu++2a -o CMakeFiles/flexible_factory.dir/flexible_factory.cpp.o -c /home/weicaivi/mpcs51045-advanced-cpp/hw12/12.4/flexible_factory.cpp",
+  "file": "/home/weicaivi/mpcs51045-advanced-cpp/hw12/12.4/flexible_factory.cpp"
+}
+]
