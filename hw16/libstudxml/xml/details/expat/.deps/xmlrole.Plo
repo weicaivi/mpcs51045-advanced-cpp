@@ -1,0 +1,25 @@
+details/expat/xmlrole.lo: details/expat/xmlrole.c \
+  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stddef.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
+  ../xml/details/expat/config.h ../xml/details/config.h \
+  ../xml/details/expat/expat_external.h ../xml/details/expat/internal.h \
+  ../xml/details/expat/xmlrole.h ../xml/details/expat/xmltok.h \
+  ../xml/details/expat/ascii.h
+
+/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stddef.h:
+
+/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h:
+
+../xml/details/expat/config.h:
+
+../xml/details/config.h:
+
+../xml/details/expat/expat_external.h:
+
+../xml/details/expat/internal.h:
+
+../xml/details/expat/xmlrole.h:
+
+../xml/details/expat/xmltok.h:
+
+../xml/details/expat/ascii.h:
