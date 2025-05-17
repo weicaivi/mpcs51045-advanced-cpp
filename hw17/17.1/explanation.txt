@@ -1,0 +1,11 @@
+We gave a best practice of using constexpr variables instead of #define Why did the committee choose to #define feature test macros instead of using constexpr variables?
+
+Feature test macros need to work in any version of C++, including pre-C++11 code that doesn't have constexpr. Using macros ensures compatibility across all C++ standard versions.
+
+In addition, feature testing often needs to happen at the preprocessor stage, before actual compilation begins. This allows for conditional compilation (#ifdef/#if defined) which is essential for handling code that won't compile at all without a certain feature.
+
+Macros can be used in preprocessor conditional directives in headers like:
+#if defined(__cpp_constexpr) && (__cpp_constexpr >= 201304L)
+    // Use advanced constexpr features
+#endif
+These checks wouldn't be possible with constexpr variables since they're evaluated after preprocessing.
