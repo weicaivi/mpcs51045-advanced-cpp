@@ -1,4 +1,3 @@
-// concurrency.cpp
 // Thread pools, synchronization, and concurrent task processing
 
 #include <thread>
@@ -561,4 +560,4 @@ private:
     std::vector<std::future<T>> futures_;
 };
 
-} // namespace dtpf
+}

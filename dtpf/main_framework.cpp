@@ -1,4 +1,3 @@
-// main_framework.cpp
 // Main framework integration and example task implementations
 
 #include <iostream>
@@ -16,7 +15,7 @@
 namespace dtpf {
 
 // ============================================================================
-// RESULT TYPE - DEFINED ONCE
+// RESULT TYPE
 // ============================================================================
 
 struct ProcessingResult {
@@ -48,7 +47,7 @@ struct ProcessingResult {
 };
 
 // ============================================================================
-// BASE CLASSES - DEFINED ONCE
+// BASE CLASSES
 // ============================================================================
 
 class TaskBase {
@@ -76,7 +75,7 @@ public:
 };
 
 // ============================================================================
-// ALL TASK CLASSES - DEFINED ONCE
+// ALL TASK CLASSES
 // ============================================================================
 
 class ComputationTask : public Task<ProcessingResult> {
@@ -245,7 +244,7 @@ private:
 };
 
 // ============================================================================
-// SIMPLIFIED SUPPORTING CLASSES
+// SUPPORTING CLASSES
 // ============================================================================
 
 enum class ExecutionStrategy {

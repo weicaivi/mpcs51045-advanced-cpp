@@ -3,11 +3,10 @@ cmake_minimum_required(VERSION 3.20)
 # Project configuration
 project(DistributedTaskProcessor 
     VERSION 1.0.0
-    DESCRIPTION "Distributed Task Processing Framework with std::execution"
+    DESCRIPTION "Distributed Task Processing Framework"
     LANGUAGES CXX
 )
 
-# C++ standard requirements
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -37,7 +36,6 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     )
 endif()
 
-# Build type configuration
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
@@ -48,7 +46,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 # Find required packages
 find_package(Threads REQUIRED)
 
-# Optional: Find TBB for enhanced parallel execution
+# Find TBB for enhanced parallel execution
 find_package(TBB QUIET)
 if(TBB_FOUND)
     add_compile_definitions(DTPF_USE_TBB)
@@ -57,7 +55,6 @@ endif()
 # Include directories
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# Source files
 set(DTPF_SOURCES
     meta_programming.cpp
     factory_pattern.cpp
@@ -67,14 +64,10 @@ set(DTPF_SOURCES
     main_framework.cpp
 )
 
-set(DTPF_HEADERS
-    # No separate headers needed - everything is in .cpp files
-)
+set(DTPF_HEADERS)
 
-# Main executable (contains main function)
 add_executable(dtpf_framework ${DTPF_SOURCES})
 
-# Link libraries
 target_link_libraries(dtpf_framework 
     PUBLIC 
         Threads::Threads
@@ -90,27 +83,10 @@ set_target_properties(dtpf_framework PROPERTIES
     CXX_STANDARD_REQUIRED ON
 )
 
-# Optional: Create additional example executables if you have separate example files
-# add_executable(dtpf_examples examples/additional_examples.cpp)
-# target_link_libraries(dtpf_examples PRIVATE Threads::Threads)
-
-# Unit tests (optional - create simple tests)
-# enable_testing()
-# 
-# add_executable(dtpf_tests test_main.cpp)
-# target_link_libraries(dtpf_tests PRIVATE Threads::Threads)
-# add_test(NAME BasicTests COMMAND dtpf_tests)
-
-# Benchmarks (optional)
-# add_executable(dtpf_benchmarks benchmarks/performance_tests.cpp)
-# target_link_libraries(dtpf_benchmarks PRIVATE Threads::Threads)
-
-# Installation (simplified for single executable)
 install(TARGETS dtpf_framework
     RUNTIME DESTINATION bin
 )
 
-# Documentation (optional)
 find_package(Doxygen QUIET)
 if(DOXYGEN_FOUND)
     set(DOXYGEN_EXTRACT_ALL YES)
@@ -137,7 +113,6 @@ add_custom_target(tidy
     COMMENT "Run static analysis"
 )
 
-# Print build configuration
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "C++ standard: ${CMAKE_CXX_STANDARD}")
 message(STATUS "Compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
@@ -147,7 +122,6 @@ else()
     message(STATUS "TBB support: Disabled")
 endif()
 
-# Compiler-specific warnings for std::execution
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "12.0")
         message(WARNING "GCC < 12.0 may have limited std::execution support")

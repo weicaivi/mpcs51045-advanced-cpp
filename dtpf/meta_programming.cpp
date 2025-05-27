@@ -1,4 +1,3 @@
-// meta_programming.cpp
 // Concepts, type traits, and template metaprogramming utilities
 
 #include <concepts>
@@ -110,4 +109,4 @@ constexpr bool all_of_v = (Predicate<Types>::value && ...);
 template<template<typename> class Predicate, typename... Types>
 constexpr bool any_of_v = (Predicate<Types>::value || ...);
 
-} // namespace dtpf
+}

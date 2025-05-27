@@ -1,6 +1,3 @@
-// execution_engine.cpp
-// Simplified execution engine without std::execution (for compatibility)
-
 #include <memory>
 #include <vector>
 #include <string>
@@ -355,4 +352,4 @@ public:
     }
 };
 
-} // namespace dtpf
+}

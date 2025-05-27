@@ -1,4 +1,3 @@
-// factory_pattern.cpp
 // Task base classes and factory implementation
 
 #include <memory>
@@ -166,4 +165,4 @@ private:
     std::map<TaskCategory, std::unique_ptr<AbstractTaskFactory>> factories_;
 };
 
-} // namespace dtpf
+}

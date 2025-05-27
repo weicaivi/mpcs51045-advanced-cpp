@@ -1,4 +1,3 @@
-// config_parser.cpp
 // Regular expression-based configuration parsing
 
 #include <regex>
@@ -297,4 +296,4 @@ private:
     }
 };
 
-} // namespace dtpf
+}
